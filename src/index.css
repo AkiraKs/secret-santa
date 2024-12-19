@@ -18,3 +18,15 @@
   }
 }
 
+@theme {
+  --color-bg: #93D6E6;
+  --font-south: 'South Park', sans-serif;
+}
+
+@font-face {
+  font-family: 'South Park';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/img/sp.ttf') format('truetype');
+}

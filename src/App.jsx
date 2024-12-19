@@ -1,7 +1,11 @@
 import { useState } from "react";
+import bg from './img/SP-BG.png';
+
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { ParticipantInput } from "./components/ParticipantInput";
 import { AssignmentDisplay } from "./components/AssignmentDisplay";
+import panneau from './img/panneau.png';
+import cadeau from './img/cadeau.png';
 
 export default function App() {
   
@@ -50,7 +54,11 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto">
+   
+       <div 
+      className="w-full h-screen flex items-start justify-center bg-contain bg-bg bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
       <div>
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
@@ -58,16 +66,14 @@ export default function App() {
 
         {currentScreen === "input" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Ajoutez les participants
-            </h2>
+          <img src={panneau} alt="ajoutez des partcipants" className="block mx-auto w-1/2 pt-4" />
             <ParticipantInput
               onAddParticipant={addParticipant}
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
-            <div className="mt-6">
-              <button className="button w-full" onClick={distributeGifts}>
+            <div className="mt-6 flex justify-center">
+              <button className=" bg-green-800 font-south text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300" onClick={distributeGifts}>
                 Distribuer les cadeaux
               </button>
             </div>
@@ -75,18 +81,17 @@ export default function App() {
         )}
         {currentScreen === "assignments" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Attributions des cadeaux
-            </h2>
+            <img src={cadeau} alt="cadeau" className="block mx-auto w-1/2 pt-4" />
             <AssignmentDisplay assignments={assignments} />
-            <div className="mt-6">
-              <button className="button w-full" onClick={resetApp}>
+            <div className="mt-6 flex justify-center">
+              <button className="bg-green-800 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300 font-south" onClick={resetApp}>
                 Recommencer
               </button>
             </div>
           </>
         )}
       </div>
-    </div>
+      </div>
+    
   );
 }
