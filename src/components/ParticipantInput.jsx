@@ -31,7 +31,7 @@ export function ParticipantInput({
       <div className="space-y-6 p-6 bg-white bg-opacity-90 rounded-xl shadow-2xl max-w-lg mx-auto mt-12 z-10">
         <h1 className="text-3xl font-bold text-center font-south text-green-600">Liste des Participants</h1>
 
-        {/* Champ d'ajout */}
+        
         <div className="flex flex-col gap-1 items-center space-x-3">
           <input
             type="text"
@@ -48,7 +48,7 @@ export function ParticipantInput({
           </button>
         </div>
 
-        {/* Liste des participants */}
+      
         <ul className="space-y-3 transition-all duration-500">
           {participants.map((participant, index) => (
             <li key={index} className="flex justify-between items-center bg-gray-100 p-3 rounded-lg shadow">
