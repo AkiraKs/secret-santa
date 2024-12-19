@@ -7,6 +7,7 @@ import { AssignmentDisplay } from "./components/AssignmentDisplay";
 import panneau from './img/panneau.png';
 import cadeau from './img/cadeau.png';
 
+
 export default function App() {
   
   const [participants, setParticipants] = useState([]);
@@ -53,6 +54,11 @@ export default function App() {
     setCurrentScreen("welcome");
   };
 
+  const resetAssignments = () => {
+    setAssignments([]);
+    alert("Les attributions ont été réinitialisées !");
+  };
+
   return (
    
        <div 
@@ -86,6 +92,9 @@ export default function App() {
             <div className="mt-6 flex justify-center">
               <button className="bg-green-800 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300 font-south" onClick={resetApp}>
                 Recommencer
+              </button>
+              <button className="bg-red-600 text-white px-4 py-2 rounded-lg shadow hover:bg-red-500 transition duration-300 font-south ml-4" onClick={resetAssignments}>
+                Réinitialiser
               </button>
             </div>
           </>
