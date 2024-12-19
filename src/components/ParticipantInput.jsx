@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Snowfall from 'react-snowfall';
 
-
 export function ParticipantInput({
   participants,
   onAddParticipant,
